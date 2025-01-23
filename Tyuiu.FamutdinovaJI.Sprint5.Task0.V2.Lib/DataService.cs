@@ -5,7 +5,7 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task0.V2.Lib
     {
     public string SaveToFileTextData(int x)
         {
-            double e = 2.718;
+            double e = 2.71828;
             string path = Path.GetTempFileName();
             double z = Math.Pow(e, x) / x;
             z = Math.Round(z, 3);
