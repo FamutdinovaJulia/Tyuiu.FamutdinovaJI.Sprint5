@@ -9,10 +9,10 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task1.V23.Lib
             for (int x = startValue; x <= stopValue; x++)
             {
                 double res;
-                if (x + 2 == 0)
+                if ((x + 2) == 0)
                 {
                     res = 0;
-                    File.AppendAllText(path, Convert.ToString(res));
+                    File.AppendAllText(path, Convert.ToString(res) + Environment.NewLine);
                     continue;
 
                 }
