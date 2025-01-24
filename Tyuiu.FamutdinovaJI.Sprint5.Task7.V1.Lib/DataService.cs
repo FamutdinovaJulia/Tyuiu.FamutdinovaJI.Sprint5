@@ -18,7 +18,7 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task7.V1.Lib
                 }
                 else
                 {
-                    line += s;
+                    line += s + ' ';
                 }
             }
             string res1 = string.Join(" ", strings);
