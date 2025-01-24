@@ -8,7 +8,7 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task7.V1.Lib
         {
             string savepath = $@"{Path.GetTempPath()}/OutPutDataFileTask7V1.txt";
             string text = File.ReadAllText(path);
-            string[] strings = text.Split(new char[] { ' ' });
+            string[] strings = text.Split(new char[] { ' ', '.' });
             string line = "";
             foreach (string s in strings)
             {
