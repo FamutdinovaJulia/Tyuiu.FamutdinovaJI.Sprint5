@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using Microsoft.VisualBasic;
+using tyuiu.cources.programming.interfaces.Sprint5;
 namespace Tyuiu.FamutdinovaJI.Sprint5.Task6.V27.Lib
 {
     public class DataService : ISprint5Task6V27
@@ -7,15 +8,20 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task6.V27.Lib
         {
             int count = 0;
             string text = File.ReadAllText(path);
-            string[] strings = text.Split(new char[] { ' ', ',', '?' });
-            for (int i = 0; i < strings.Length; i++)
+            string[] strings = text.Split(" ");
+            foreach (string s in strings)
             {
-                if (strings[i].Length == 3)
+                if (int.TryParse(s, out int num))
                 {
-                    count += 1;
+                    
+                    if ((num > 99) && (num < 1000))
+                    {
+                        count += 1;
+                    }
+                    
                 }
-            }
-            return count;
+            }   
+             return count;
         }
     }
 }
