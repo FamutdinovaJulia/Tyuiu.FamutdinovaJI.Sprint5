@@ -1,5 +1,6 @@
-﻿using Tyuiu.FamutdinovaJI.Sprint5.Task2.V29.Lib;
-namespace Tyuiu.FamutdinovaJI.Sprint5.Task2.V29
+﻿using System.Text;
+using Tyuiu.FamutdinovaJI.Sprint5.Task3.V1.Lib;
+namespace Tyuiu.FamutdinovaJI.Sprint5.Task3.V1
 {
     internal class Program
     {
@@ -11,15 +12,15 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task2.V29
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int[,] matrix = { { 9, 2, 5 }, { 3, 2, 4 }, { 2, 8, 8 } };
+            int x = 3;
 
-            Console.WriteLine("* Исходный массив = " + matrix);
+            Console.WriteLine("* 3начение переменной Х: " + x);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string res = ds.SaveToFileTextData(matrix);
+            string res = ds.SaveToFileTextData(x);
             StreamReader sr = new StreamReader(res);
 
             Console.WriteLine("Файл: " + res);
@@ -28,8 +29,10 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task2.V29
             string line = sr.ReadLine();
             while (line != null)
             {
+                byte[] bytes = Encoding.UTF8.GetBytes(line);
+                line = Convert.ToBase64String(bytes);
                 Console.WriteLine(line);
-                line = sr.ReadLine();
+                line =sr.ReadLine();
             }
         }
     }
