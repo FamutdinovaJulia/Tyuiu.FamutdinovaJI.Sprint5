@@ -6,20 +6,24 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task7.V1.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string savepath = $@"{Path.GetTempPath()}/OutPutDataFileTask7V15.txt";
+            string savepath = $@"{Path.GetTempPath()}/OutPutDataFileTask7V1.txt";
             string text = File.ReadAllText(path);
             string[] strings = text.Split(new char[] { ' ' });
-            for (int i = 0; i < strings.Length; i++)
+            string line = "";
+            foreach (string s in strings)
             {
-                Int32.TryParse(strings[i], out int j);
-                if (j > 0)
+                if (int.TryParse(s, out int num))
                 {
-                    strings[i] = ""; 
+                    continue;
+                }
+                else
+                {
+                    line += s;
                 }
             }
             string res1 = string.Join(" ", strings);
             string res = Regex.Replace(res1, " {2,}", " ");
-            File.WriteAllText(savepath, res);
+            File.WriteAllText(savepath, line);
             return savepath;
         }
     }
