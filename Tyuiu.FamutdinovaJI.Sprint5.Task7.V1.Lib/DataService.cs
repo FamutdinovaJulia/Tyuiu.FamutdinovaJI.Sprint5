@@ -11,7 +11,8 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task7.V1.Lib
             string[] strings = text.Split(new char[] { ' ' });
             for (int i = 0; i < strings.Length; i++)
             {
-                if (Int32.TryParse(strings[i], out int j))
+                Int32.TryParse(strings[i], out int j);
+                if (j > 0)
                 {
                     strings[i] = ""; 
                 }
