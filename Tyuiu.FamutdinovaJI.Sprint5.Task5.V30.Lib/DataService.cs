@@ -10,20 +10,22 @@ namespace Tyuiu.FamutdinovaJI.Sprint5.Task5.V30.Lib
             string[] strings = text.Split(" ");
             double max = -100;
             foreach (string s in strings)
-            {     
+            {
                 if (Double.TryParse(s, out double number) && (number % 1 == 0))
                 {
-                    for (int i = 2; i < number; i++)
+                    int count = 0;
+                    for (int i = 2; i <= number; i++)
                     {
                         if (number % i == 0)
                         {
-                            continue;
+                            count++;
                         }
                     }
-                    if (max < number)
+                    if ((max < number) && (count == 1))
                     {
                         max = number;
-                    } 
+                    }
+
                 }
             }
             return Math.Round(max, 3);
